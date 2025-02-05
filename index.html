@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample E-commerce Page</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+
+  <header style="text-align: center; padding: 20px; background-color: #007bff; color: white;">
+    <h1>Welcome to Our E-commerce Store</h1>
+  </header>
+
+  <div style="width: 80%; margin: 0 auto; padding: 20px; background-color: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    
+    <!-- User Information Form -->
+    <h2 style="text-align: center;">Enter Your Details</h2>
+    <form id="user-form" style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+      <div style="margin-bottom: 10px;">
+        <label for="name" style="display: block; font-size: 16px;">Name:</label>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;" required>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="contact" style="display: block; font-size: 16px;">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;" required>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="email" style="display: block; font-size: 16px;">Email Address:</label>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;" required>
+      </div>
+      <div style="text-align: center;">
+        <button type="submit" style="background-color: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px; border-radius: 4px;">
+          Submit
+        </button>
+      </div>
+    </form>
+
+    <br>
+    
+    <video controls style="display: block; margin: 20px auto; width: 80%;">
+      <source src="C:\Users\HP\Desktop\Demo page\vecteezy_an-astronaut-ventures-across-the-desolate-lunar-landscape_51228076.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <audio controls style="display: block; margin: 20px auto; width: 80%;">
+      <source src="C:\Users\HP\Desktop\Demo page\file_example_MP3_1MG.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h2>Our Products</h2>
+
+    <div style="display: inline-block; width: 30%; margin: 10px; padding: 10px; background-color: #fff; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <img src="product1.jpg" alt="Product 1" style="width: 100%; height: auto;">
+      <h3 style="margin: 10px 0;">Product 1</h3>
+      <p style="font-size: 18px; color: #007bff;">$20.00</p>
+      <button style="background-color: #28a745; color: white; border: none; padding: 10px; cursor: pointer;" onclick="buyProduct('Product 1')">Buy Now</button>
+    </div>
+
+    <div style="display: inline-block; width: 30%; margin: 10px; padding: 10px; background-color: #fff; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <img src="product2.jpg" alt="Product 2" style="width: 100%; height: auto;">
+      <h3 style="margin: 10px 0;">Product 2</h3>
+      <p style="font-size: 18px; color: #007bff;">$35.00</p>
+      <button style="background-color: #28a745; color: white; border: none; padding: 10px; cursor: pointer;" onclick="buyProduct('Product 2')">Buy Now</button>
+    </div>
+
+    <div style="display: inline-block; width: 30%; margin: 10px; padding: 10px; background-color: #fff; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+      <img src="product3.jpg" alt="Product 3" style="width: 100%; height: auto;">
+      <h3 style="margin: 10px 0;">Product 3</h3>
+      <p style="font-size: 18px; color: #007bff;">$50.00</p>
+      <button style="background-color: #28a745; color: white; border: none; padding: 10px; cursor: pointer;" onclick="buyProduct('Product 3')">Buy Now</button>
+    </div>
+
+    <div id="thank-you-message" style="display: none; text-align: center; padding: 50px;">
+      <h2>Thank You for Your Purchase!</h2>
+      <img src="thank-you.jpg" alt="Thank You" style="max-width: 300px; height: auto;">
+    </div>
+  </div>
+
+  <script>
+    function buyProduct(productName) {
+      alert("You have bought " + productName);
+      document.getElementById('thank-you-message').style.display = 'block';
+    }
+
+    // Handle form submission
+    document.getElementById("user-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const contact = document.getElementById("contact").value;
+      const email = document.getElementById("email").value;
+
+      // Simulate user data submission
+      alert("Thank you, " + name + "!\nWe have received your details.\nContact: " + contact + "\nEmail: " + email);
+      document.getElementById("user-form").reset();  // Reset the form after submission
+    });
+  </script>
+
+</body>
+</html>
